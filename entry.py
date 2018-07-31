@@ -4,9 +4,7 @@ from datetime import datetime
 class Entry:
 
     def __init__(self, **kwargs):
-        """Checkes if arguments were passed in,
-        gets user input if not
-        """
+        """Checks if arguments were passed in, gets user input if not"""
 
         self.name = (self.get_name() if "Task Name" not in kwargs else kwargs["Task Name"])
         self.time = (self.get_time_spent() if "Time Spent (mins)" not in kwargs else kwargs["Time Spent (mins)"])

@@ -17,9 +17,7 @@ class Worklog:
         self.main_menu()
 
     def main_menu(self):
-        """Main program menu,
-        prompts user for input
-        """
+        """Main program menu, prompts user for input"""
 
         print("\nWork Logger Application")
 
@@ -71,9 +69,7 @@ class Worklog:
             })
 
     def update_entries(self, entries):
-        """Updates entries by overwirting csv,
-        with a new file
-        """
+        """Updates entries by overwriting csv,with a new file"""
 
         with open(filename, 'w') as file:
             headers = ["Task Name", "Time Spent (mins)", "Notes", "Date"]
@@ -88,9 +84,7 @@ class Worklog:
                 })
 
     def lookup_entry(self):
-        """Provides search options for user, 
-        promptes for input
-        """
+        """Provides search options for user, prompts for input"""
 
         search_options = {"1": "By date", "2": "By date range", "3": "By keyword", "4": "By time spent",
                           "5": "By pattern", "6": "Exit to main menu"}
@@ -188,19 +182,12 @@ class Worklog:
               "Notes: {}\n".format(entries[index].notes), "Date: {}\n".format(entries[index].date))
 
     def print_entries(self, entries):
-        """Interates through entries,
-        selecting appropriate entry to
-        print
-        """
+        """Iterates through entries, selecting appropriate entry to print"""
 
         index = 0
 
         while True:
             self.print_entry(index, entries)
-
-            # if len(entries) == 1:
-            #  self.paging_options(index, entries)
-            # self.main_menu()
 
             self.paging_options(index, entries)
 
@@ -223,9 +210,7 @@ class Worklog:
                 input("\nInvalid choice, please try again :")
 
     def search_again(self):
-        """Checks if user wants to
-        perform anoth search
-        """
+        """Checks if user wants to perform another search"""
 
         response = input(
             "\nWould you like to search for something else? (Yes or No): ")
@@ -360,9 +345,7 @@ class Worklog:
         self.search_again()
 
     def edit_entry(self, index, entries):
-        """Provides entry editing options,
-        gets user input and updates entry
-        """
+        """Provides entry editing options, gets user input and updates entry"""
 
         edit_options = {"1": "Task Name",
                         "2": "Time Spent", "3": "Notes", "4": "Date"}
